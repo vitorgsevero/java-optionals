@@ -17,6 +17,17 @@ public class Application {
         Stream.of(13, 2, 3)
                 .findFirst()
                 .ifPresent(System.out::println);
+
+        //Optional empty
+        final Optional<Object> empty = Optional.empty();
+        System.out.println(empty);
+
+        final Optional<Object> hello = Optional.ofNullable(null);
+        
+        //orElse
+        final Object orElse = empty.orElse("If it's empty this message should be printed");
+        System.out.println(orElse);
+
     }
 
     public static Optional<Integer> numberConverter(String numberStr){
@@ -24,4 +35,8 @@ public class Application {
         return Optional.of(value);
 //        return Optional.empty();
     }
+
+
+
+
 }
